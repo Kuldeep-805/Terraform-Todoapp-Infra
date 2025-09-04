@@ -6,7 +6,7 @@ on:
       - 'features/**'
       - 'main'
       - 'hotflix/**'
-  workflow_dispatch:
+ 
 
 
 
