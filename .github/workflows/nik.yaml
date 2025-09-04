@@ -5,26 +5,18 @@ on:
     branches:
       - 'features/**'
       - 'main'
-      - 'hotflix/**'
+      - 'hotfix/**'
 
- jobs:
-  Dau_maharaj:
+jobs:
+  dau_maharaj:
     name: dau maharaj
     runs-on: self-hosted
     steps:
-    - name: Dau maharaj rocks!
-      run: echo dau maharaj
+      - name: Dau maharaj rocks!
+        run: echo "dau maharaj"
 
-  - name: nandan maharaj rocks!
-      run: echo nandan maharaj    
+      - name: Nandan maharaj rocks!
+        run: echo "nandan maharaj"
 
-       - name: bandan maharaj rocks!
-      run: echo bandan maharaj 
-  
-      
-
-
-
-
-
-  
+      - name: Bandan maharaj rocks!
+        run: echo "bandan maharaj"
