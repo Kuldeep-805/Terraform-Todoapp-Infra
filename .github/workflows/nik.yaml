@@ -7,7 +7,7 @@ on:
       - 'main'
       - 'hotflix/**'
 
-jobs:
+ jobs:
   Dau_maharaj:
     name: dau maharaj
     runs-on: self-hosted
