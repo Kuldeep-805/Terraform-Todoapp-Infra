@@ -1,4 +1,4 @@
-name: "dau Maharaj"
+ name: "dau Maharaj"
 
 on:
   workflow_dispatch:
@@ -14,4 +14,13 @@ jobs:
         uses: little-core-labs/install-terraform@v2.0.0
         with:
          version: 1.13.0
+          
+     - name: Azure Login
+       uses: Azure/login@v2.3.0
+       with:
+          client-id: 71d633da-0f9c-4679-ab81-dcbe6b1c930a
+          tenant-id: b045856a-3dc6-4e42-9811-6dd226cc9800
+          subscription-id: 59bea627-7b7a-4e47-bec4-fb0b51214f26
+          
+                
           
