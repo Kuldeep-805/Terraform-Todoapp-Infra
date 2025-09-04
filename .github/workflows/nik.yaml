@@ -1,0 +1,15 @@
+name: "dau Maharaj"
+
+on:
+  push:
+    branches:
+      - 'features/**'
+      - 'main'
+      - 'hotflix/**'
+  workflow_dispatch:
+
+
+
+
+
+  
