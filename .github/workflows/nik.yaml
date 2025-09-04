@@ -1,22 +1,10 @@
 name: "dau Maharaj"
 
-on:
-  push:
-    branches:
-      - 'features/**'
-      - 'main'
-      - 'hotfix/**'
+on: workflow_dispatch
 
 jobs:
-  dau_maharaj:
-    name: dau maharaj
+  terraform-job:
     runs-on: self-hosted
-    steps:
-      - name: Dau maharaj rocks!
-        run: echo "dau maharaj"
-
-      - name: Nandan maharaj rocks!
-        run: echo "nandan maharaj"
-
-      - name: Bandan maharaj rocks!
-        run: echo "bandan maharaj"
+    steps: 
+      - name: checkout
+        uses: actions/checkout@5.0.0
