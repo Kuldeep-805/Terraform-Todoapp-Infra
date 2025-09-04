@@ -8,7 +8,7 @@ on:
       - 'hotflix/**'
 
 jobs:
-  Dau maharaj:
+  Dau_maharaj:
     name: dau maharaj
     runs-on: self-hosted
     steps:
