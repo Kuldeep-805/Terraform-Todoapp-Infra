@@ -6,7 +6,16 @@ on:
       - 'features/**'
       - 'main'
       - 'hotflix/**'
- 
+
+jobs:
+  Dau maharaj:
+    name: dau maharaj
+    runs-on: self-hosted
+    steps:
+    - name: Dau maharaj rocks!
+      run: echo dau maharaj
+    
+      
 
 
 
