@@ -27,13 +27,7 @@ jobs:
           tenant-id: b045856a-3dc6-4e42-9811-6dd226cc9800
           subscription-id: 59bea627-7b7a-4e47-bec4-fb0b51214f26
 
-      - name: Set Terraform Env Vars for Azure
-        run: |
-          echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
-          echo "ARM_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
-          echo "ARM_USE_OIDC=true" >> $GITHUB_ENV
-
+  
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
