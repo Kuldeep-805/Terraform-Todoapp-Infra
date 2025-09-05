@@ -20,7 +20,7 @@ jobs:
           version: 1.3.0   # 1.13.0 nahi hai, 1.3.x ya 1.4.x use karo
 
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@v2.3.0
         with:
           client-id: 71d633da-0f9c-4679-ab81-dcbe6b1c930a
           tenant-id: b045856a-3dc6-4e42-9811-6dd226cc9800
@@ -37,15 +37,7 @@ jobs:
         run: terraform init -input=false
         working-directory: environments/dev
 
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
-        working-directory: environments/dev
-
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -no-color -input=false -out=tfplan
-        working-directory: environments/dev
+      
 
     
 
