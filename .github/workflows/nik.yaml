@@ -27,9 +27,9 @@ jobs:
           subscription-id: 59bea627-7b7a-4e47-bec4-fb0b51214f26
 
       - name: Terraform fmt
-          id: fmt
-          run: terraform fmt -check
-          continue-on-error: true
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
 
 
           
