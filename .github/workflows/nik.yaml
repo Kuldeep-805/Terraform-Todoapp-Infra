@@ -57,8 +57,7 @@ jobs:
     - name: Await Manual Approval
       uses: trstringer/manual-approval@v1
 
-      secret: ${{ github.TOKEN }}
-      approvers: kuldeep805
+      
       timeout-minutes: 60
       
       
