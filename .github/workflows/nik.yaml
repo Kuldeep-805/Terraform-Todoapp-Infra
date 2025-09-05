@@ -25,6 +25,13 @@ jobs:
           client-id: 71d633da-0f9c-4679-ab81-dcbe6b1c930a
           tenant-id: b045856a-3dc6-4e42-9811-6dd226cc9800
           subscription-id: 59bea627-7b7a-4e47-bec4-fb0b51214f26
+
+      - name: Terraform fmt
+          id: fmt
+          run: terraform fmt -check
+          continue-on-error: true
+
+
           
 
           
