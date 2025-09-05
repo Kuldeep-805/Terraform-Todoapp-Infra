@@ -59,7 +59,7 @@ jobs:
 
       secret: ${{ github.TOKEN }}
       approvers: kuldeep805
-        timeout-minutes: 60
+      timeout-minutes: 60
       
       
       
