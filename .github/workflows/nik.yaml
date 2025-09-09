@@ -81,6 +81,7 @@ terraform-apply:
       run: terraform plan -no-color -input=false
       continue-on-error: true
       working-directory: environments/dev
+      
 
     
 
