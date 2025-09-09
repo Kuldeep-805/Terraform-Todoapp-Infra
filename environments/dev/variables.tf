@@ -10,11 +10,9 @@ terraform {
     storage_account_name = "mstorage98765"
     container_name       = "abc987"
     key                  = "dev.terraform.tfstate"
-
-
   }
 }
 
 provider "azurerm" {
-  features {}  
+  features {}
 }
