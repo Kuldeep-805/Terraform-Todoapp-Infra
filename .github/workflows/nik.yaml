@@ -1,7 +1,12 @@
 name: "dau Maharaj"
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main   
   
 permissions:
   id-token: write
@@ -38,11 +43,7 @@ jobs:
         id: init
         run: terraform init -input=false
         working-directory: environments/dev
-        env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
+        
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
@@ -50,22 +51,42 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color -input=false -out=tfplan
+        run: terraform plan -no-color -input=false
+        continue-on-error: true
         working-directory: environments/dev
 
-        
-  manual-approval:
-    runs-on: ubuntu-latest
-    needs: terraform-job
-    steps:
-    - name: Await Manual Approval
-      uses: trstringer/manual-approval@v1
+terraform-apply:
+ runs-on: self-hosted
+ if: github.ref == 'refs/heads/main'
+ needs: terraform-init-plan
+ environment: dev
+ steps:
+   - name: checkout
+     uses: actions/checkout@v5.0.0
+
+   - name: Azure Login
+      uses: azure/login@v2.3.0
+      with:
+        client-id: 71d633da-0f9c-4679-ab81-dcbe6b1c930a
+        tenant-id: b045856a-3dc6-4e42-9811-6dd226cc9800
+        subscription-id: 59bea627-7b7a-4e47-bec4-fb0b51214f26 
+
+    - name: Terraform Init
+      id: init
+      run: terraform init -input=false
+      working-directory: environments/dev
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color -input=false
+      continue-on-error: true
+      working-directory: environments/dev
 
     
-      timeout-minutes: 60
+
+        
       
-      
-      
+    
       
       
       
